@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Lab Elektronika & Instrumentasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #4fa3ff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        h1, h2 {
+            color: #2c6ca6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table, th, td {
+            border: 1px solid #9ec9f7;
+        }
+
+        th {
+            background: #b9dbff;
+        }
+
+        td, th {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .footer {
+            margin-top: 50px;
+            background-color: #4fa3ff;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGASI -->
+<div class="navbar">
+    <a href="index.php">Home</a>
+    <a href="index.php?page=mahasiswa">Mahasiswa</a>
+    <a href="index.php?page=dosen">Dosen</a>
+    <a href="index.php?page=matakuliah">Mata Kuliah</a>
+</div>
+
+<div class="container">
+
+<?php
+$page = isset($_GET['page']) ? $_GET['page'] : '';
+
+/* ===========================
+   HALAMAN HOME
+   =========================== */
+if ($page == "") {
+    echo "
+    <h1>Laboratorium Elektronika & Instrumentasi</h1>
+    <p>
+        Laboratorium Elektronika dan Instrumentasi merupakan salah satu lab unggulan 
+        yang berfokus pada penerapan elektronika, sistem sensor, mikrokontroler, dan 
+        instrumentasi modern. Lab ini bertujuan mendukung kegiatan praktikum, penelitian, 
+        serta pengembangan keterampilan mahasiswa dalam bidang elektronika terapan.
+    </p>
+
+    <p>
+        Website ini dibuat khusus untuk mahasiswa <b>Semester 5</b> yang mengambil 
+        peminatan Elektronika & Instrumentasi. Di dalamnya berisi data lengkap mengenai 
+        dosen pengajar, daftar mahasiswa, serta mata kuliah yang dipelajari pada semester ini.
+    </p>
+
+    <h2>Fokus Pembelajaran Semester 5</h2>
+    <ul>
+        <li>Instrumen Medis</li>
+        <li>Mikrokontroler</li>
+        <li>Mikroprosesor</li>
+        <li>Sistem Sensor</li>
+        <li>Praktikum Mikrokontroler</li>
+        <li>Praktikum Mikroprosesor</li>
+        <li>Praktikum Sistem Sensor</li>
+    </ul>
+    ";
+}
+
+/* ===========================
+   HALAMAN MAHASISWA
+   =========================== */
+else if ($page == "mahasiswa") {
+    echo "
+    <h1>Data Mahasiswa Semester 5 (Angkatan 2023)</h1>
+
+    <table>
+        <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+        </tr>
+
+        <tr><td>H021231043</td><td>ANSAR MUBAROQ</td></tr>
+        <tr><td>H021231007</td><td>DANDI HARTONO</td></tr>
+        <tr><td>H021231063</td><td>FEBRINESYA ALFHA TANDI LION</td></tr>
+        <tr><td>H021231052</td><td>JULIYATI PUSPITA SARI</td></tr>
+        <tr><td>H021231004</td><td>MISWANJA BATU PADANG</td></tr>
+        <tr><td>H021231041</td><td>NUR ALIK KATU</td></tr>
+        <tr><td>H021231067</td><td>NUR AMALIA</td></tr>
+        <tr><td>H021231005</td><td>RUTH LEBANG</td></tr>
+        <tr><td>H021231022</td><td>SHEIRA ABIDEVA. H</td></tr>
+        <tr><td>H021231053</td><td>SRI WAHYUNI. SM</td></tr>
+        <tr><td>H021231055</td><td>TASKIYATUNNAPS</td></tr>
+        <tr><td>H021231037</td><td>ULVA ASRIANI NUR</td></tr>
+        <tr><td>H021231042</td><td>YEMIMA MELANIE SURYA</td></tr>
+    </table>
+    ";
+}
+
+/* ===========================
+   HALAMAN DOSEN
+   =========================== */
+else if ($page == "dosen") {
+    echo "
+    <h1>Daftar Dosen Pengajar</h1>
+
+    <table>
+        <tr>
+            <th>Nama Dosen</th>
+            <th>Gelar</th>
+        </tr>
+
+        <tr><td>Prof. Dr. Ir. Bidayatul Armynah</td><td>M.T</td></tr>
+        <tr><td>Prof. Dr. Arifin</td><td>M.T</td></tr>
+        <tr><td>Prof. Dr. Bualkar Abdullah</td><td>M.Eng.Sc.</td></tr>
+        <tr><td>Ida Laila</td><td>S.Si., M.Si</td></tr>
+    </table>
+    ";
+}
+
+/* ===========================
+   HALAMAN MATA KULIAH
+   =========================== */
+else if ($page == "matakuliah") {
+    echo "
+    <h1>Mata Kuliah Semester 5</h1>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Mata Kuliah</th>
+        </tr>
+
+        <tr><td>1</td><td>Instrumen Medis</td></tr>
+        <tr><td>2</td><td>Mikrokontroler</td></tr>
+        <tr><td>3</td><td>Mikroprosesor</td></tr>
+        <tr><td>4</td><td>Sistem Sensor</td></tr>
+        <tr><td>5</td><td>Praktikum Mikrokontroler</td></tr>
+        <tr><td>6</td><td>Praktikum Mikroprosesor</td></tr>
+        <tr><td>7</td><td>Praktikum Sistem Sensor</td></tr>
+    </table>
+    ";
+}
+?>
+
+</div>
+
+<div class="footer">
+    © 2025 Lab Elektronika & Instrumentasi – Fisika
+</div>
+
+</body>
+</html>
